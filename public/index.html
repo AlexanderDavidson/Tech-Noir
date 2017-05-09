@@ -45,18 +45,18 @@
       <a-box id="ceiling" depth="7.6" height="0.5" width="30" position="0 3.4 1.3" color="#efd6a2" shadow="cast: false"></a-box>
 
 <!--   back walls      -->
-      <a-box id="back-wall-lower" depth="0.2" height="3" width="30" position="0 1 -3.2" rotation="15 0 0" color="#efd6a2" shadow="cast: false"></a-box>
-      <a-box id="back-wall-upper" depth="0.2" height="2" width="30" position="0 4 -2.396" rotation="15 0 0" color="#efd6a2" shadow="cast: false"></a-box>
+      <a-box id="back-wall-lower" depth="0.2" height="3" width="30" position="0 1 -3.2" rotation="15 0 0" color="#efd6a2" shadow=""></a-box>
+      <a-box id="back-wall-upper" depth="0.2" height="2" width="30" position="0 4 -2.396" rotation="15 0 0" color="#efd6a2" shadow=""></a-box>
 
 <!--   side walls  left    -->
-      <a-box id="side-wall-left-back" depth="1.7" height="3.2" width="0.5" position="-2.6 1.6 -1.83" color="#efd6a2" shadow="cast: false"></a-box>
-      <a-box id="side-wall-left-angle" depth="1" height="4" width="0.5" position="-2.6 1.6 -2.623" color="#efd6a2" rotation="15 0 0" shadow="cast: false"></a-box>
+      <a-box id="side-wall-left-back" depth="1.7" height="3.2" width="0.5" position="-2.6 1.6 -1.83" color="#efd6a2" shadow=""></a-box>
+      <a-box id="side-wall-left-angle" depth="1" height="4" width="0.5" position="-2.6 1.6 -2.623" color="#efd6a2" rotation="15 0 0" shadow=""></a-box>
       <a-box id="side-wall-left" depth="4" height="2" width="0.2" position="-2.6 1 1" color="#efd6a2" shadow="cast: false"></a-box>
 
 <!--   side walls  right    -->
-      <a-box id="side-wall-right-back" depth="1.7" height="3.2" width="0.5" position="2.6 1.6 -1.83" color="#efd6a2" shadow="cast: false"></a-box>
-      <a-box id="side-wall-right-angle" depth="1" height="4" width="0.5" position="2.6 1.6 -2.623" color="#efd6a2" rotation="15 0 0" shadow="cast: false"></a-box>
-      <a-box id="side-wall-right" depth="4" height="2" width="0.2" position="2.6 1 1" color="#efd6a2" shadow="cast: false"></a-box>
+      <a-box id="side-wall-right-back" depth="1.7" height="3.2" width="0.5" position="2.6 1.6 -1.83" color="#efd6a2" shadow=""></a-box>
+      <a-box id="side-wall-right-angle" depth="1" height="4" width="0.5" position="2.6 1.6 -2.623" color="#efd6a2" rotation="15 0 0" shadow=""></a-box>
+      <a-box id="side-wall-right" depth="4" height="2" width="0.2" position="2.6 1 1" color="#efd6a2" shadow=""></a-box>
 
 <!--   side walls  lextended    -->
       <a-box depth="1.7" height="3.2" width="0.5" position="6.2 1.6 -1.83" color="#efd6a2"></a-box>
@@ -146,7 +146,7 @@
       </a-entity>
 
 <!-- Camera -->
-      <a-entity id="camera" camera="userHeight: 1.6" look-controls="" wasd-controls="" position="0 0 5">
+      <a-entity id="camera" camera="userHeight: 1.6" look-controls="" wasd-controls="" position="0 0 3.8">
         <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
                   material="color: gray; opacity: 0.5"></a-entity>
       </a-entity>
@@ -156,8 +156,19 @@
       <a-entity id="amb-light-left" position="-12 5 5" light="type: directional; intensity: 0.2; castShadow: true"></a-entity>
       <a-entity id="amb-light-right" position="12 5 5" light="type: directional; intensity: 0.2; castShadow: true"></a-entity>
 
-      <a-entity id="amb-light-back" position="7 5 -12" light="type: directional; color: #4e99a3; groundColor: #ffda99; castShadow: true"></a-entity>
-
+      <a-entity id="amb-light-back" position="5 7 -12" light="color: #4e99a3; groundColor: #ffda99; type: point; castShadow: true"></a-entity>
+      <a-entity id="amb-back-dir"
+        position="2.7 3.55 -8"
+        light="color: #abbc9a; groundColor: #ffda99; castShadow: true; shadowCameraFar: 500.69; shadowCameraFov: 90.93; shadowCameraRight: 7.99; shadowCameraBottom: -2; shadowCameraLeft: -8; shadowCameraVisible: true">
+      </a-entity>
+<!-- Exterior -->
+      <a-plane id="sky-plane"
+        position="0 2.6 -2.98"
+        rotation="15 0 0"
+        light="color: #abbc9a; groundColor: #7ebbff; intensity: 0.2; castShadow: true"
+        geometry="primitive: plane; height: 3; width: 30"
+        material="shader: flat; color: #D6D4BB">
+      </a-plane>
       <a-sky color="black" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
     </a-scene>
 
