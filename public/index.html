@@ -16,6 +16,10 @@
     <script src="https://cdn.rawgit.com/tizzle/aframe-sprite-component/master/dist/aframe-sprite-component.min.js"></script>
     <script src="https://rawgit.com/gmarty/aframe-ui-components/master/dist/aframe-ui-components.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
+
+    </script>
+
     <script src="../js/index.js"></script>
   </head>
   <body>
@@ -26,14 +30,14 @@
 
       </a-assets>
 
-      <a-sphere material-displacement
+      <!-- <a-sphere material-displacement
                 scale="1 1 1"
                 radius="0.2"
                 position="0 3.5 -12"
                 segments-height="128"
                 segments-width="128">
         <a-animation attribute="scale" direction="alternate-reverse" dur="20000" from="1 1 1" to="4 4 4" repeat="indefinite"></a-animation>
-      </a-sphere>
+      </a-sphere> -->
 
 <!-- Person Reference -->
       <a-box id="person-ref" position="-1.4 0.85 0.3" height="1.7" width="0.6" depth="0.2" color="#ffba54" opacity="0.8"></a-box>
@@ -159,7 +163,7 @@
       <a-entity id="amb-light-back" position="5 7 -12" light="color: #4e99a3; groundColor: #ffda99; type: point; castShadow: true"></a-entity>
       <a-entity id="amb-back-dir"
         position="2.7 3.55 -8"
-        light="color: #abbc9a; groundColor: #ffda99; castShadow: true; shadowCameraFar: 500.69; shadowCameraFov: 90.93; shadowCameraRight: 7.99; shadowCameraBottom: -2; shadowCameraLeft: -8; shadowCameraVisible: true">
+        light="color: #abbc9a; groundColor: #ffda99; castShadow: true; shadowCameraFar: 500.69; shadowCameraFov: 90.93; shadowCameraRight: 7.99; shadowCameraBottom: -2; shadowCameraLeft: -8">
       </a-entity>
 <!-- Exterior -->
       <a-plane id="sky-plane"
