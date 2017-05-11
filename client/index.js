@@ -50,4 +50,19 @@ $akira
     })
   })
 
-document.querySelector('#akira').emit('animationstart')
+// document.querySelector('#akira').emit('animationstart')
+
+AFRAME.registerComponent('emit-on-click', {
+  schema: {
+    target: {type: 'selector'},
+    event: {type: 'string'}
+  },
+
+  init: function () {
+    var eventName = this.data.event;
+
+    this.el.addEventListener('click', function () {
+      this.data.target.emit(eventName);
+    })
+  }
+})

@@ -131,7 +131,7 @@
 <!-- OBJECTS -->
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
       <a-entity class="object-selectable" id="akira" position="-0.85 0.8 1">
-        <a-entity
+        <a-entity id="akira-obj"
           geometry="depth: 0.1; height: 0.1; width: 0.1"
           material="color: red">
           <a-animation
@@ -143,8 +143,8 @@
             fill="both"
             end="5000">
           </a-animation>
-        <!-- </a-entity>
-        <a-entity id="akira-light"
+        </a-entity>
+        <a-entity id="akira-light" emit-on-click="target: #akira-obj; spotlight"
           light="type: spot; color: #FFF; intensity: 0.6; angle: 12; penumbra: 1"
           position="0 1 0"
           rotation="-90 0 0"
@@ -155,7 +155,7 @@
             to="true">
           </a-animation>
 
-        </a-entity> -->
+        </a-entity>
         <!-- <a-entity mixin="hover-light">
           <a-animation
             begin="click"
