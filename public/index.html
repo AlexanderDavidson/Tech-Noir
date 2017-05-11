@@ -26,12 +26,62 @@
 
     <a-scene fog="type: linear; color: black; density: 0.01" shadow="type: pcfsoft" light="shadowMapType: basic" stats> <!-- fog="color: black; density: 0.8; far: 10; near: 4" or fog="color: black; density: 0.12; far: 10; near: 10; type: exponential" -->
       <a-assets>
-        <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png">
+        <!-- <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png"> -->
 
         <!-- <a-asset-item id="akira-obj" src="/assets/models/akira-bike-1.obj"></a-asset-item>
         <a-asset-item id="akira-mtl" src="/assets/models/akira-bike-1.mtl"></a-asset-item> -->
+        <a-mixin id="cube-selected" material="color: cyan"></a-mixin>
+        <a-mixin id="hover-light"
+          light="type: spot; color: #FFF; intensity: 0.6; angle: 12; penumbra: 1"
+          position="0 1 0"
+          rotation="-90 0 0"
+          visible="true">
+        </a-mixin>
+        <a-mixin id="temp-cube"
+          geometry="depth: 0.1; height: 0.1; width: 0.1"
+          material="color: red">
+        </a-mixin>
       </a-assets>
 
+      <!-- Camera -->
+      <a-entity position="0 0 3.8">
+        <a-entity id="camera"
+          camera="userHeight: 1.6"
+          look-controls
+          wasd-controls>
+          <a-entity
+            cursor="fuse: true; fuseTimeout: 500"
+            raycaster="far: 20; interval: 1000; objects:; recursive: true"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: #f4b342; shader: flat">
+            <!-- <a-animation
+              begin="click"
+              easing="ease-in"
+              attribute="scale"
+              fill="backwards"
+              from="0.1 0.1 0.1"
+              to="1 1 1"
+              dur="150"> -->
+            </a-animation>
+            <a-animation
+              begin="fusing"
+              easing="ease-in"
+              attribute="scale"
+              fill="forwards"
+              from="1 1 1"
+              to="0.1 0.1 0.1"
+              dur="1500">
+            </a-animation>
+          </a-entity>
+
+          <!-- <a-entity
+            geometry="primitive: circle; radius: 0.03"
+            position="0 0 -1"
+            material="color: gray; opacity: 0.5">
+          </a-entity> -->
+        </a-entity>
+      </a-entity>
 
       <a-entity>
         <a-cone height="5"
@@ -80,37 +130,66 @@
 
 <!-- OBJECTS -->
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
-      <a-entity id="akira" geometry="depth: 0.1; height: 0.1; width: 0.1"
-        position="-0.85 0.8 1"
-        material="color: red">
+      <a-entity class="object-selectable" id="akira" position="-0.85 0.8 1">
+        <a-entity
+          geometry="depth: 0.1; height: 0.1; width: 0.1"
+          material="color: red">
+          <a-animation
+            begin="click"
+            attribute="position"
+            from="0 0 0"
+            to="0 0.2 0"
+            dur="2000"
+            fill="both"
+            end="5000">
+          </a-animation>
+        </a-entity>
+        <!-- <a-entity mixin="hover-light">
+          <a-animation
+            attribute="visible"
+            begin="spotlight"
+            to="true">
+          </a-animation>
+
+        </a-entity> -->
+        <!-- <a-entity mixin="hover-light">
+          <a-animation
+            begin="click"
+            attibute="visible"
+            from="false"
+            to="true"
+            dur="500"
+            fill="both">
+          </a-animation> -->
+        </a-entity>
       </a-entity>
 
-      <a-entity id="district-9" geometry="depth: 0.1; height: 0.1; width: 0.1"
+      <a-entity class="object-selectable" id="district-9" geometry="depth: 0.1; height: 0.1; width: 0.1"
         position="-0.223 0.8 1.2"
         material="color: orange">
       </a-entity>
 
-      <a-entity id="minority-report" geometry="depth: 0.1; height: 0.1; width: 0.1"
+      <a-entity class="object-selectable" id="minority-report" geometry="depth: 0.1; height: 0.1; width: 0.1"
         position="-0.559 0.8 1.4"
         material="color: white">
       </a-entity>
 
-      <a-entity id="twelve-monkeys" geometry="depth: 0.1; height: 0.1; width: 0.1"
+      <a-entity class="object-selectable" id="twelve-monkeys" geometry="depth: 0.1; height: 0.1; width: 0.1"
         position="0.258 0.8 1.9"
         material="color: gray">
       </a-entity>
 
-      <a-entity id="metropolis" geometry="depth: 0.1; height: 0.1; width: 0.1"
+      <a-entity class="object-selectable" id="metropolis" geometry="depth: 0.1; height: 0.1; width: 0.1"
         position="0.36 0.8 1.6"
         material="color: yellow">
       </a-entity>
 
-      <a-entity id="design-blimp" geometry="depth: 0.1; height: 0.1; width: 0.1"
+      <a-entity class="object-selectable" id="design-blimp" geometry="depth: 0.1; height: 0.1; width: 0.1"
         position="-0.5 0.8 1.9"
         material="color: purple">
       </a-entity>
 
-      <a-entity id="tech-vk" geometry="depth: 0.1; height: 0.1; width: 0.1"
+      <a-entity class="object-selectable" id="tech-vk" geometry="depth: 0.1; height: 0.1; width: 0.1"
         position="0.66 0.8 1.57"
         material="color: black">
       </a-entity>
@@ -223,15 +302,6 @@
         <a-entity id="fan-attach" position="0 -0.5 1.54"
           geometry="primitive: cylinder; height: 1.5;radius: 0.02"
           material="color: #ab8c42; metalness: 0.8; roughness: 0.46">
-        </a-entity>
-      </a-entity>
-
-<!-- Camera -->
-      <a-entity id="camera" camera="userHeight: 1.6" look-controls="" wasd-controls="" position="0 0 3.8">
-        <a-entity
-          geometry="primitive: circle; radius: 0.03"
-          position="0 0 -1"
-          material="color: gray; opacity: 0.5">
         </a-entity>
       </a-entity>
 
