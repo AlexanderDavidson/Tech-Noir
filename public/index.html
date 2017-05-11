@@ -26,14 +26,49 @@
 
       </a-assets>
 
-      <a-sphere material-displacement
+      <a-entity>
+        <a-cone height="5"
+              radius-top="0.5"
+              radius-bottom="1.5"
+              open-ended="true"
+              position="0 0 0"
+              opacity="0"
+              material="shader: volumetric-light; spotPosition: 0 0 0; opacity: 0; attenuation: 3.49; anglePower: 3.36;">
+        </a-cone>
+        <a-light type="spot" color="#fff" angle="35"
+                 rotation="-90 0 0"
+                 position="0 0 0"
+                 target="#box"
+                 intensity="0.54"
+                 penumbra="0.57"
+                 shadowCameraFar="499.87">
+        </a-light>
+      </a-entity>
+
+      <!-- test volumetric lighting -->
+
+      <!-- <a-light type="spot" color="#fff" angle="35" target="#box" intensity="0.54" penumbra="0.57" shadowcamerafar="499.87" light="angle:69.75;color:#fff;intensity:0.54;penumbra:0.57;type:spot;target:null;castShadow:true;shadowBias:0.05;shadowCameraFar:501.12;shadowCameraFov:91.59;shadowCameraNear:1.38;shadowCameraTop:4.87;shadowCameraVisible:true">
+      </a-light>
+
+      <a-cone height="5" radius-top="0.5" radius-bottom="1.5" open-ended="true" opacity="0" material="opacity:0;shader:volumetric-light;attenuation:100000;anglePower:14.81;spotPosition:{&quot;x&quot;:0,&quot;y&quot;:0,&quot;z&quot;:-45};lightColor:{&quot;x&quot;:0.5,&quot;y&quot;:1,&quot;z&quot;:1}" geometry="mergeTo:null;primitive:cone;height:2.68;openEnded:true;radiusBottom:4.11;radiusTop:2.88;segmentsHeight:17;segmentsRadial:19;radius:2.47">
+      </a-cone>
+
+      <a-entity position="">
+        <a-cone height="5" radius-top="0.5" radius-bottom="1.5" open-ended="true" opacity="0" material="shader: volumetric-light; spotPosition: 0 0 0; opacity: 0; attenuation: 3.49; anglePower: 3.36;" rotation="" scale="" visible="" geometry="">
+        </a-cone>
+        <a-light type="spot" color="#fff" angle="35" target="#box" intensity="0.54" penumbra="0.57" shadowcamerafar="499.87" scale="" visible="" light="">
+        </a-light>
+      </a-entity> -->
+
+<!-- shader test -->
+      <!-- <a-sphere material-displacement
                 scale="1 1 1"
                 radius="0.2"
                 position="0 3.5 -12"
                 segments-height="128"
                 segments-width="128">
         <a-animation attribute="scale" direction="alternate-reverse" dur="20000" from="1 1 1" to="4 4 4" repeat="indefinite"></a-animation>
-      </a-sphere>
+      </a-sphere> -->
 
 <!-- Person Reference -->
       <a-box id="person-ref" position="-1.4 0.85 0.3" height="1.7" width="0.6" depth="0.2" color="#ffba54" opacity="0.8"></a-box>
@@ -159,7 +194,7 @@
       <a-entity id="amb-light-back" position="5 7 -12" light="color: #4e99a3; groundColor: #ffda99; type: point; castShadow: true"></a-entity>
       <a-entity id="amb-back-dir"
         position="2.7 3.55 -8"
-        light="color: #abbc9a; groundColor: #ffda99; castShadow: true; shadowCameraFar: 500.69; shadowCameraFov: 90.93; shadowCameraRight: 7.99; shadowCameraBottom: -2; shadowCameraLeft: -8; shadowCameraVisible: true">
+        light="color: #abbc9a; groundColor: #ffda99; castShadow: true; shadowCameraFar: 500.69; shadowCameraFov: 90.93; shadowCameraRight: 7.99; shadowCameraBottom: -2; shadowCameraLeft: -8">
       </a-entity>
 <!-- Exterior -->
       <a-plane id="sky-plane"
