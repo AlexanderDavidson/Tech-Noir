@@ -28,6 +28,8 @@
       <a-assets>
         <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png">
 
+        <a-asset-item id="akira-obj" src="/assets/models/akira-bike-1.obj"></a-asset-item>
+        <a-asset-item id="akira-mtl" src="/assets/models/akira-bike-1.mtl"></a-asset-item>
       </a-assets>
 
       <!-- <a-sphere material-displacement
@@ -38,6 +40,8 @@
                 segments-width="128">
         <a-animation attribute="scale" direction="alternate-reverse" dur="20000" from="1 1 1" to="4 4 4" repeat="indefinite"></a-animation>
       </a-sphere> -->
+<!-- OBJECTS -->
+      <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity>
 
 <!-- Person Reference -->
       <a-box id="person-ref" position="-1.4 0.85 0.3" height="1.7" width="0.6" depth="0.2" color="#ffba54" opacity="0.8"></a-box>
@@ -174,6 +178,8 @@
         material="shader: flat; color: #D6D4BB">
       </a-plane>
       <a-sky color="black" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
+<!-- ==============  Temporary  ============== -->
+      <a-entity light="color: #9ebbc1; groundColor: #819296; intensity: 0.5; type: ambient"></a-entity>
     </a-scene>
 
   </body>
