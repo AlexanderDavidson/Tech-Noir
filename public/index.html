@@ -52,7 +52,7 @@
         </a-light>
       </a-entity>
 
-      <!-- test volumetric lighting -->
+<!-- test volumetric lighting -->
 
       <!-- <a-light type="spot" color="#fff" angle="35" target="#box" intensity="0.54" penumbra="0.57" shadowcamerafar="499.87" light="angle:69.75;color:#fff;intensity:0.54;penumbra:0.57;type:spot;target:null;castShadow:true;shadowBias:0.05;shadowCameraFar:501.12;shadowCameraFov:91.59;shadowCameraNear:1.38;shadowCameraTop:4.87;shadowCameraVisible:true">
       </a-light>
@@ -80,6 +80,27 @@
 
 <!-- OBJECTS -->
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
+      <a-entity id="akira" geometry="depth: 0.1; height: 0.1; width: 0.1" position="-0.85 0.8 1"
+        material="color: red"></a-entity>
+
+      <a-entity id="district-9" geometry="depth: 0.1; height: 0.1; width: 0.1" position="-0.223 0.8 1.2"
+        material="color: orange"></a-entity>
+
+      <a-entity id="minority-report" geometry="depth: 0.1; height: 0.1; width: 0.1" position="-0.559 0.8 1.4"
+        material="color: white"></a-entity>
+
+      <a-entity id="twelve-monkeys" geometry="depth: 0.1; height: 0.1; width: 0.1" position="0.258 0.8 1.9"
+        material="color: gray"></a-entity>
+
+      <a-entity id="metropolis" geometry="depth: 0.1; height: 0.1; width: 0.1" position="0.36 0.8 1.6"
+        material="color: yellow"></a-entity>
+
+      <a-entity id="design-blimp" geometry="depth: 0.1; height: 0.1; width: 0.1" position="-0.5 0.8 1.9"
+        material="color: purple"></a-entity>
+
+      <a-entity id="technology-vk" geometry="depth: 0.1; height: 0.1; width: 0.1" position="0.66 0.8 1.57"
+        material="color: black"></a-entity>
+
 
 <!-- Person Reference -->
       <a-box id="person-ref" position="-1.4 0.85 0.3" height="1.7" width="0.6" depth="0.2" color="#ffba54" opacity="0.8"></a-box>
@@ -193,8 +214,11 @@
 
 <!-- Camera -->
       <a-entity id="camera" camera="userHeight: 1.6" look-controls="" wasd-controls="" position="0 0 3.8">
-        <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
-                  material="color: gray; opacity: 0.5"></a-entity>
+        <a-entity
+          geometry="primitive: circle; radius: 0.03"
+          position="0 0 -1"
+          material="color: gray; opacity: 0.5">
+        </a-entity>
       </a-entity>
 
 <!--   Lights     -->
