@@ -1,4 +1,6 @@
-console.log("hello world!?");
+require('aframe')
+
+console.log("hello world!?")
 
 // sScene Selector
 var scene = d3.select("a-scene")
@@ -48,4 +50,4 @@ $akira
     })
   })
 
-document.querySelector('#akira')
+document.querySelector('#akira').emit('animationstart')
