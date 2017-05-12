@@ -21,72 +21,24 @@ var $techVK = d3.select("tech-vk")
 
 var $objectSelectable = d3.sele
 
-
-// Akira Test
-
-// $akira
-//   .on("click", function(d,i) {
-//       console.log("click", i,d)
-//     })
-//   .on("mouseenter", function(d,i) {
-//     // this event gets fired continuously as long as the cursor
-//     // is over the element. we only want trigger our animation the first time
-//     if(this.hovering) return;
-//     console.log("hover", i,d)
-//     this.hovering = true;
-//     d3.select("akira-light").transition().duration(1000)
-//     .attr({
-//       visible: true
-//     })
-//   })
-//   .on("mouseleave", function(d,i) {
-//     console.log("leave",i,d)
-//     this.hovering = false;
-//     d3.select("akira-light").transition()
-//     .attr({
-//       visible: false
-//     })
-//   })
-
-// document.querySelector('#akira').emit('animationstart')
-
-// AFRAME.registerComponent('emit-on-click', {
-//   schema: {``
-//     target: {type: 'selector'},
-//     event: {type: 'string'}
-//   },
-//
-//   init: function () {
-//     var eventName = this.data.event
-//     console.log(this.data.event);
-//
-//
-//     this.el.addEventListener('click', function () {
-//       this.data.target.emit(eventName);
-//     })
-//   }
-// })
-// AFRAME.registerComponent('emit-on-click', {
-//
-//   init: function () {
-//     this.el.addEventListener('click', function () {
-//       const $light = document.querySelector('#akira-light')
-//       console.log($light);
-//       $light.setAttribute('visible', 'true')
-//     })
-//   }
-// })
-
+// Object Highlight animation
 AFRAME.registerComponent('spotlight', {
 
   init: function () {
     var $this = this.el
-    this.el.addEventListener('click', function () {
-      const $light = document.createElement('a-entity')
+    const $light = document.createElement('a-entity')
+    this.el.addEventListener('mouseenter', function () {
+
       $light.setAttribute('mixin', 'hover-light')
+      $this.classList.add('objHilight')
       console.log($light)
       console.log($this)
       $this.appendChild($light)
+    })
+    this.el.addEventListener('mouseleave', function () {
+
+      $this.classList.remove('objHilight')
+      $this.removeChild($light)
     })
   }
 })
