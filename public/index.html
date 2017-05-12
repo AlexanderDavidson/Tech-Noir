@@ -17,6 +17,7 @@
     <script src="https://rawgit.com/ngokevin/kframe/0.3.0/dist/k-frame.min.js"></script>
     <script src="https://rawgit.com/gmarty/aframe-ui-components/master/dist/aframe-ui-components.min.js"></script>
     <script src="https://rawgit.com/IdeaSpaceVR/aframe-ui-modal-component/master/dist/aframe-ui-modal-component.min.js"></script>
+    <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
     <!-- <script src="https://rawgit.com/scenevr/htmltexture-component/master/dist/aframe-htmltexture-component.min.js"></script> -->
 
     <!-- <script src="https://cdn.rawgit.com/tizzle/aframe-sprite-component/master/dist/aframe-sprite-component.min.js"></script> -->
@@ -43,10 +44,10 @@
         </a-mixin>
 
 
-        <a-mixin id="popup-title" position="0 0.3 0" text="value: Placeholder Title;"></a-mixin>
-        <a-mixin id="popup-img" position="0 0 0"></a-mixin>
-        <a-mixin id="popup-text" position="0 0.7 0" text="value: Placeholder Text Placeholder Text Placeholder Text;"></a-mixin>
-        <a-mixin id="popup-video" position="0 0.2 -0.5"></a-mixin>
+        <a-mixin id="popup-title" position="0 0.3 0" text="value: Placeholder Title;" billboard></a-mixin>
+        <a-mixin id="popup-img" position="0 0 0" billboard></a-mixin>
+        <a-mixin id="popup-text" position="0 0.7 0" text="value: Placeholder Text Placeholder Text Placeholder Text;" billboard></a-mixin>
+        <a-mixin id="popup-video" position="0 0.2 -0.5" billboard></a-mixin>
 
 
       </a-assets>
@@ -164,8 +165,7 @@
           </a-animation>
 
           <a-animation
-
-              delay="7000"delay="7000"
+            delay="7000"
             begin="mouseleave"
             attribute="position"
             from="0 0.2 0"
