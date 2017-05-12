@@ -26,19 +26,40 @@ AFRAME.registerComponent('spotlight', {
 
   init: function () {
     var $this = this.el
+    var $thisParent = this.el.parentNode
     const $light = document.createElement('a-entity')
+    var $popupTitle = document.createElement('a-entity')
+    var $popupImg = document.createElement('a-entity')
+    var $popupText = document.createElement('a-entity')
+    var $popupVid = document.createElement('a-entity')
+
+
     this.el.addEventListener('mouseenter', function () {
 
       $light.setAttribute('mixin', 'hover-light')
-      $this.classList.add('objHilight')
+      $popupTitle.setAttribute('mixin', 'popup-title')
+      $popupImg.setAttribute('mixin', 'popup-img')
+      $popupText.setAttribute('mixin', 'popup-text')
+      $popupVid.setAttribute('mixin', 'popup-video')
+
+      $thisParent.classList.add('objHighlight')
       console.log($light)
       console.log($this)
-      $this.appendChild($light)
+
+      $thisParent.appendChild($light)
+      $thisParent.appendChild($popupTitle)
+      $thisParent.appendChild($popupImg)
+      $thisParent.appendChild($popupText)
+      $thisParent.appendChild($popupVid)
     })
     this.el.addEventListener('mouseleave', function () {
 
-      $this.classList.remove('objHilight')
-      $this.removeChild($light)
+      $thisParent.classList.remove('objHighlight')
+      $thisParent.removeChild($light)
+      $thisParent.removeChild($popupTitle)
+      $thisParent.removeChild($popupImg)
+      $thisParent.removeChild($popupText)
+      $thisParent.removeChild($popupVid)
     })
   }
 })
