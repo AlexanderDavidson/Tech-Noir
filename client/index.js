@@ -1,4 +1,55 @@
-console.log("hello world!?")
+// Object Brief Summaries
+
+var objects = [
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  },
+  {
+    name: ,
+    id: ,
+    video: ,
+    summary: ,
+  }
+]
 
 // sScene Selector
 var scene = d3.select("a-scene")
@@ -18,8 +69,6 @@ var $metropolis = d3.select("metropolis")
 var $designBlimp = d3.select("design-blimp")
 
 var $techVK = d3.select("tech-vk")
-
-var $objectSelectable = d3.sele
 
 // Object Highlight animation
 AFRAME.registerComponent('spotlight', {
