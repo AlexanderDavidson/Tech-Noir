@@ -17,7 +17,7 @@ var objects = [
     name: 'Minority Report',
     id: minRep,
     video: ,
-    summary: 'Minority Report is a 2002 American science fiction film directed by Steven Spielberg and loosely based on the short story of the same name by Philip K. Dick. It is set primarily in Washington, D.C., and Northern Virginia in the year 2054, where "PreCrime", a specialized police department, apprehends criminals based on foreknowledge provided by three psychics called "precogs". The cast includes Tom Cruise as Chief of PreCrime John Anderton, Colin Farrell as Department of Justice agent Danny Witwer, Samantha Morton as the senior precog Agatha, and Max von Sydow as Anderton\'s superior Lamar Burgess. The film combines elements of tech noir, whodunit, thriller and science fiction genres, as well as a traditional chase film, as the main protagonist is accused of a crime he has not committed and becomes a fugitive. Spielberg has characterized the story as fifty percent character and fifty percent very complicated storytelling with layers and layers of murder mystery and plot. The film's central theme is the question of free will versus determinism. It examines whether free will can exist if the future is set and known in advance. Other themes include the role of preventive government in protecting its citizenry, the role of media in a future state where technological advancements make its presence nearly boundless, the potential legality of an infallible prosecutor, and Spielberg's repeated theme of broken families.',
+    summary: 'Minority Report is a 2002 American science fiction film directed by Steven Spielberg and loosely based on the short story of the same name by Philip K. Dick. It is set primarily in Washington, D.C., and Northern Virginia in the year 2054, where "PreCrime", a specialized police department, apprehends criminals based on foreknowledge provided by three psychics called "precogs". The film combines elements of tech noir, whodunit, thriller and science fiction genres, as well as a traditional chase film, as the main protagonist is accused of a crime he has not committed and becomes a fugitive. Spielberg has characterized the story as fifty percent character and fifty percent very complicated storytelling with layers and layers of murder mystery and plot.',
   },
   {
     name: '12 Monkeys',
@@ -29,7 +29,7 @@ var objects = [
     name: 'Metropolis',
     id: metropolis,
     video: ,
-    summary: 'Metropolis is a 1927 German expressionist epic science-fiction drama film directed by Fritz Lang. Made in Germany during the Weimar Period, Metropolis is set in a futuristic urban dystopia and follows the attempts of Freder, the wealthy son of the city\'s ruler, and Maria, a poor worker, to overcome the vast gulf separating the classes of their city. Filming took place in 1925 at a cost of approximately five million Reichsmarks. The art direction draws influence from Bauhaus, Cubist and Futurist design.',
+    summary: 'Metropolis is a 1927 German expressionist epic science-fiction drama film directed by Fritz Lang. Made in Germany during the Weimar Period, Metropolis is set in a futuristic urban dystopia and follows the attempts of Freder, the wealthy son of the city's ruler, and Maria, a poor worker, to overcome the vast gulf separating the classes of their city. Filming took place in 1925 at a cost of approximately five million Reichsmarks. The art direction draws influence from Bauhaus, Cubist and Futurist design.',
   },
   {
     name: ,
