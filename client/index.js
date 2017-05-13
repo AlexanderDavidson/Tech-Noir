@@ -29,25 +29,7 @@ var objects = [
     name: 'Metropolis',
     id: metropolis,
     video: ,
-    summary: 'Metropolis is a 1927 German expressionist epic science-fiction drama film directed by Fritz Lang. Made in Germany during the Weimar Period, Metropolis is set in a futuristic urban dystopia and follows the attempts of Freder, the wealthy son of the city's ruler, and Maria, a poor worker, to overcome the vast gulf separating the classes of their city. Filming took place in 1925 at a cost of approximately five million Reichsmarks. The art direction draws influence from Bauhaus, Cubist and Futurist design.',
-  },
-  {
-    name: ,
-    id: ,
-    video: ,
-    summary: ,
-  },
-  {
-    name: ,
-    id: ,
-    video: ,
-    summary: ,
-  },
-  {
-    name: ,
-    id: ,
-    video: ,
-    summary: ,
+    summary: 'Metropolis is a 1927 German expressionist epic science-fiction drama film directed by Fritz Lang. Made in Germany during the Weimar Period, Metropolis is set in a futuristic urban dystopia and follows the attempts of Freder, the wealthy son of the city\'s ruler, and Maria, a poor worker, to overcome the vast gulf separating the classes of their city. Filming took place in 1925 at a cost of approximately five million Reichsmarks. The art direction draws influence from Bauhaus Cubist and Futurist design.'
   }
 ]
 
