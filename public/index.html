@@ -31,6 +31,7 @@
 
     <a-scene fog="type: linear; color: black; density: 0.01" shadow="type: pcfsoft" light="shadowMapType: basic" stats> <!-- fog="color: black; density: 0.8; far: 10; near: 4" or fog="color: black; density: 0.12; far: 10; near: 10; type: exponential" -->
       <a-assets>
+        <a-asset-item id="set-obj" src="./assets/models/setVK1scale_lo.obj"></a-asset-item>
         <!-- <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png"> -->
 
         <!-- <a-asset-item id="akira-obj" src="/assets/models/akira-bike-1.obj"></a-asset-item>
@@ -51,6 +52,13 @@
 
 
       </a-assets>
+      <!-- Set -->
+      <a-entity
+        obj-model="obj: #set-obj"
+        scale="0.01 0.01 0.01"
+        rotation="-90 180 0"
+        position="0.161 0 1">
+      </a-entity>
 
       <!-- Camera -->
       <a-entity position="0 0 3.8">
@@ -140,7 +148,7 @@
 
 <!-- OBJECTS -->
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
-      <a-entity geometry="primitive: box" scale="0.5 2 0.5" rotation="0 22d 0" position="0 2 -4" draw="width: 128; height: 512;" htmltexture="asset: #popup"></a-entity>
+      <!-- <a-entity geometry="primitive: box" scale="0.5 2 0.5" rotation="0 22d 0" position="0 2 -4" draw="width: 128; height: 512;" htmltexture="asset: #popup"></a-entity> -->
 
       <a-entity class="object-selectable" id="akira" position="-0.85 0.8 1">
         <a-entity id="akira-obj" spotlight
@@ -443,51 +451,24 @@
       <a-box id="person-ref" position="-1.4 0.85 0.3" height="1.7" width="0.6" depth="0.2" color="#ffba54" opacity="0.8"></a-box>
 
 <!--    Floor    -->
-      <a-plane id="floor" height="30" width="30" rotation="-90 0 0" color="grey" shadow="cast: false"></a-plane>
+      <a-plane id="floor"
+        height="30"
+        width="30"
+        rotation="-90 0 0"
+        color="grey"
+        shadow="cast: false">
+      </a-plane>
 
 <!--   ceiling      -->
-      <a-box id="ceiling" depth="7.6" height="0.5" width="30" position="0 3.4 1.3" color="#efd6a2" shadow="cast: false"></a-box>
+      <a-plane id="ceiling"
+        height="30"
+        width="30"
+        position="0 4.75 7.51"
+        rotation="-90 0 0"
+        color="black"
+        shadow="cast: true">
+      </a-plane>
 
-<!--   back walls      -->
-      <a-box id="back-wall-lower" depth="0.2" height="3" width="30" position="0 1 -3.2" rotation="15 0 0" color="#efd6a2" shadow=""></a-box>
-      <a-box id="back-wall-upper" depth="0.2" height="2" width="30" position="0 4 -2.396" rotation="15 0 0" color="#efd6a2" shadow=""></a-box>
-
-<!--   side walls  left    -->
-      <a-box id="side-wall-left-back" depth="1.7" height="3.2" width="0.5" position="-2.6 1.6 -1.83" color="#efd6a2" shadow=""></a-box>
-      <a-box id="side-wall-left-angle" depth="1" height="4" width="0.5" position="-2.6 1.6 -2.623" color="#efd6a2" rotation="15 0 0" shadow=""></a-box>
-      <a-box id="side-wall-left" depth="4" height="2" width="0.2" position="-2.6 1 1" color="#efd6a2" shadow="cast: false"></a-box>
-
-<!--   side walls  right    -->
-      <a-box id="side-wall-right-back" depth="1.7" height="3.2" width="0.5" position="2.6 1.6 -1.83" color="#efd6a2" shadow=""></a-box>
-      <a-box id="side-wall-right-angle" depth="1" height="4" width="0.5" position="2.6 1.6 -2.623" color="#efd6a2" rotation="15 0 0" shadow=""></a-box>
-      <a-box id="side-wall-right" depth="4" height="2" width="0.2" position="2.6 1 1" color="#efd6a2" shadow=""></a-box>
-
-<!--   side walls  lextended    -->
-      <a-box depth="1.7" height="3.2" width="0.5" position="6.2 1.6 -1.83" color="#efd6a2"></a-box>
-      <a-box depth="1" height="4" width="0.5" position="6.2 1.6 -2.623" color="#efd6a2" rotation="15 0 0"></a-box>
-      <a-box depth="4" height="2" width="0.2" position="6.2 1 1" color="#efd6a2"></a-box>
-
-      <a-box depth="1.7" height="3.2" width="0.5" position="-6.2 1.6 -1.83" color="#efd6a2"></a-box>
-      <a-box depth="1" height="4" width="0.5" position="-6.2 1.6 -2.623" color="#efd6a2" rotation="15 0 0"></a-box>
-      <a-box depth="4" height="2" width="0.2" position="-6.2 1 1" color="#efd6a2"></a-box>
-
-<!--   filing cabinet     -->
-      <a-entity id="filing"
-        position="0 0.37 0"
-        geometry="depth: 0.9; height: 1; width: 1.2"
-        material="color: #676971; roughness: 0.6"
-        shadow="">
-      </a-entity>
-      <a-entity id="typewriter"
-        position="0 1 0"
-        geometry="depth: 0.5; height: 0.27; width: 0.81"
-        material="color: #666667; metalness: 0.45; roughness: 0.59"
-        shadow="">
-      </a-entity>
-
-<!-- Tables -->
-      <a-entity id="table-1" position="-0.5 0.37 1.5" geometry="depth: 1.2; height: 0.75; width: 0.9" material="color: #bab4a7; roughness: 0.6" shadow=""></a-entity>
-      <a-entity id="table-2" position="0.5 0.37 1.5" geometry="depth: 1.2; height: 0.75; width: 0.9" material="color: #bab4a7; roughness: 0.6" shadow=""></a-entity>
 
 <!--  Fan  -->
       <a-entity id="fan-parent" position="0 1.85 1.54" shadow="">
@@ -550,7 +531,6 @@
       </a-entity>
 
 <!--   Lights     -->
-      <a-entity light="color: #9ebbc1; groundColor: #819296; intensity: 0.02; type: ambient"></a-entity>
       <!-- <a-entity id="amb-light-left"
         position="-12 5 5"
         light="type: directional; intensity: 0.2; castShadow: true">
@@ -568,17 +548,40 @@
         position="2.7 3.55 -8"
         light="color: #abbc9a; groundColor: #ffda99; castShadow: true; shadowCameraFar: 500.69; shadowCameraFov: 90.93; shadowCameraRight: 7.99; shadowCameraBottom: -2; shadowCameraLeft: -8">
       </a-entity> -->
+      <a-entity id="vol-light" position="0 3.343 -3.147" rotation="-30 0 0" scale="2 1 1">
+        <a-cone height="10.4"
+          radius-top="2"
+          radius-bottom="2.54"
+          open-ended="true"
+          opacity="0"
+          material="shader: volumetric-light; spotPosition: 0 2.52 -0.19; opacity: 0; attenuation: 4.54; anglePower: 6.2; lightColor: 0.83 0.91 1"
+          rotation=""
+          scale=""
+          visible=""
+          geometry="">
+        </a-cone>
+        <a-light type="spot"
+          color="#b0c9ce"
+          angle="35"
+          rotation="-90 0 0"
+          position="0 0 0"
+          intensity="1.4"
+          penumbra="0.21"
+          shadowCameraFar="30"
+          castShadow="true">
+        </a-light>
+      </a-entity>
 <!-- Exterior -->
       <a-plane id="sky-plane"
-        position="0 2.6 -2.98"
-        rotation="15 0 0"
+        position="0 2.6 -3.683"
+        rotation="30 0 0"
         light="color: #abbc9a; groundColor: #7ebbff; intensity: 0.2; castShadow: true"
-        geometry="primitive: plane; height: 3; width: 30"
+        geometry="primitive: plane; height: 3; width: 6"
         material="shader: flat; color: #D6D4BB">
       </a-plane>
       <a-sky color="black" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
 <!-- ==============  Temporary  ============== -->
-      <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient"></a-entity>
+      <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient; visible: false"></a-entity>
     </a-scene>
 
 
