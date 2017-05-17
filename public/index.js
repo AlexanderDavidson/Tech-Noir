@@ -50,6 +50,7 @@ AFRAME.registerComponent('spotlight', {
       if ( $current ) {
         const $currentEffects = document.querySelector('.effects')
         const $effectsParent = $currentEffects.parentNode
+        $currentEffects.emit('rise')
         $effectsParent.removeChild($currentEffects)
       }
 
@@ -58,3 +59,23 @@ AFRAME.registerComponent('spotlight', {
     })
   }
 })
+
+AFRAME.registerShader('toon-shader', {
+  schema: {
+    gradientMap: {default: null},
+
+  },
+  /**
+   * `init` used to initialize material. Called once.
+   */
+  init: function (data) {
+    this.material = new THREE.MeshToonMaterial(data)
+    this.update(data)  // `update()` currently not called after `init`. (#1834)
+  },
+  /**
+   * `update` used to update the material. Called on initialization and when data updates.
+   */
+  update: function (data) {
+    this.material.gradientMap = data.gradientMap
+  }
+});

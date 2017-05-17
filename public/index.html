@@ -24,22 +24,26 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
 
-    <script src="../client/index.js"></script>
+    <script src="./index.js"></script>
 
   </head>
   <body>
 
-    <a-scene fog="type: linear; color: black; density: 0.01" shadow="type: pcfsoft" light="shadowMapType: basic" stats> <!-- fog="color: black; density: 0.8; far: 10; near: 4" or fog="color: black; density: 0.12; far: 10; near: 10; type: exponential" -->
+    <a-scene shadow="type: pcfsoft" light="shadowMapType: basic" stats> <!-- fog="type: linear; color: black; far: 14.4; near: 6.4; density: 2.84" -->
       <a-assets>
         <a-asset-item id="set-obj" src="./assets/models/setVK1scale_lo.obj"></a-asset-item>
+        <a-asset-item id="akira-obj" src="./assets/models/akira-bike_scale_lo.obj"></a-asset-item>
+        <a-asset-item id="district-obj" src="./assets/models/District_9_Assault_Rifle_lo_poly.obj"></a-asset-item>
+        <a-asset-item id="spinner-obj" src="./assets/models/spinner_lo.obj"></a-asset-item>
+        <a-asset-item id="fifth-element-obj" src="./assets/models/fifth_element_zf1_lo.obj"></a-asset-item>
         <!-- <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png"> -->
 
         <!-- <a-asset-item id="akira-obj" src="/assets/models/akira-bike-1.obj"></a-asset-item>
         <a-asset-item id="akira-mtl" src="/assets/models/akira-bike-1.mtl"></a-asset-item> -->
 
         <a-mixin id="hover-light"
-          light="type: spot; color: #FFF; intensity: 0.6; angle: 12; penumbra: 1"
-          position="0 1 0"
+          light="type: spot; color: #FFF; intensity: 0.6; angle: 20; penumbra: 1"
+          position="0 1.42 0"
           rotation="-90 0 0"
           visible="true">
         </a-mixin>
@@ -150,21 +154,23 @@
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
       <!-- <a-entity geometry="primitive: box" scale="0.5 2 0.5" rotation="0 22d 0" position="0 2 -4" draw="width: 128; height: 512;" htmltexture="asset: #popup"></a-entity> -->
 
-      <a-entity class="object-selectable" id="akira" position="-0.85 0.8 1">
-        <a-entity id="akira-obj" spotlight
-          geometry="depth: 0.1; height: 0.1; width: 0.1"
-          material="color: red">
+      <a-entity class="object-selectable" id="akira" position="-0.668 0.879 1" rotation="0 -65 0">
+        <a-entity id="akira-object" spotlight
+          obj-model="obj: #akira-obj"
+          material="color: white"
+          scale="0.001 0.001 0.001"
+          position="0 -0.606 0">
 
           <a-animation
-            begin="mouseenter"
+            begin="rise"
             attribute="position"
-            from="0 0 0"
-            to="0 0.2 0"
+            from="0 -0.606 0"
+            to="0 -0.134 0"
             dur="2000"
             fill="both">
           </a-animation>
           <a-animation
-            begin="mouseenter"
+            begin="rise"
             attribute="rotation"
             from="0 0 0"
             to="0 360 0"
@@ -176,8 +182,8 @@
             delay="7000"
             begin="mouseleave"
             attribute="position"
-            from="0 0.2 0"
-            to="0 0 0"
+            from="0 -0.134 0"
+            to="0 -0.606 0"
             dur="2000"
             fill="both">
           </a-animation>
@@ -193,22 +199,25 @@
         </a-entity>
       </a-entity>
 
-      <a-entity class="object-selectable" id="district-9" position="-0.223 0.8 1.2">
+      <a-entity class="object-selectable" id="district-9" position="-0.223 0.879 1.2" rotation="0 -25 0">
         <a-entity spotlight
-          geometry="depth: 0.1; height: 0.1; width: 0.1"
-          material="color: orange">
+          obj-model="obj: #district-obj"
+          scale="0.025 0.025 0.025"
+          material="color: orange"
+          position="-0.43 0 0.310"
+          rotation="-90 0 0">
           <a-animation
             begin="mouseenter"
             attribute="position"
-            from="0 0 0"
-            to="0 0.2 0"
+            from="-0.43 0 0.310"
+            to="-0.57 0.145 0.03"
             dur="2000"
             fill="both">
           </a-animation>
           <a-animation
             begin="mouseenter"
             attribute="rotation"
-            from="0 0 0"
+            from="-90 0 0"
             to="0 360 0"
             dur="2000"
             fill="both">
@@ -218,8 +227,8 @@
             delay="7000"
             begin="mouseleave"
             attribute="position"
-            from="0 0.2 0"
-            to="0 0 0"
+            from="-0.43 0.2 0.310"
+            to="-0.43 0 0.310"
             dur="2000"
             fill="both">
           </a-animation>
@@ -228,7 +237,7 @@
             begin="mouseleave"
             attribute="rotation"
             from="0 360 0"
-            to="0 0 0"
+            to="-90 0 0"
             dur="2000"
             fill="both">
           </a-animation>
@@ -236,7 +245,7 @@
 
       </a-entity>
 
-      <a-entity class="object-selectable" id="minority-report" position="-0.559 0.8 1.4">
+      <a-entity class="object-selectable" id="minority-report" position="-0.559 0.879 1.4">
         <a-entity spotlight
           geometry="depth: 0.1; height: 0.1; width: 0.1"
           material="color: white">
@@ -278,23 +287,26 @@
         </a-entity>
       </a-entity>
 
-      <a-entity class="object-selectable" id="twelve-monkeys" position="0.258 0.8 1.9">
+      <a-entity class="object-selectable" id="fifth-element" position="-0.11 0.879 1.75" rotation="0 5.46 0">
         <a-entity spotlight
-          geometry="depth: 0.1; height: 0.1; width: 0.1"
-          material="color: gray">
+        obj-model="obj: #fifth-element-obj"
+        material="color: white"
+        scale="0.001 0.001 0.001"
+        position="0 0 -0.357"
+        rotation="0 0 85">
           <a-animation
             begin="mouseenter"
             attribute="position"
-            from="0 0 0"
-            to="0 0.2 0"
+            from="0 0 -0.357"
+            to="0 0.4 -0.357"
             dur="2000"
             fill="both">
           </a-animation>
           <a-animation
             begin="mouseenter"
             attribute="rotation"
-            from="0 0 0"
-            to="0 360 0"
+            from="0 0 85"
+            to="0 -360 0"
             dur="2000"
             fill="both">
           </a-animation>
@@ -303,8 +315,8 @@
             delay="7000"
             begin="mouseleave"
             attribute="position"
-            from="0 0.2 0"
-            to="0 0 0"
+            from="0 0.4 -0.357"
+            to="0 0 -0.357"
             dur="2000"
             fill="both">
           </a-animation>
@@ -312,15 +324,15 @@
             delay="7000"
             begin="mouseleave"
             attribute="rotation"
-            from="0 360 0"
-            to="0 0 0"
+            from="0 -360 0"
+            to="0 0 85"
             dur="2000"
             fill="both">
           </a-animation>
         </a-entity>
       </a-entity>
 
-      <a-entity class="object-selectable" id="metropolis" position="0.36 0.8 1.6">
+      <a-entity class="object-selectable" id="metropolis" position="0.36 0.879 1.6">
         <a-entity spotlight
           geometry="depth: 0.1; height: 0.1; width: 0.1"
           material="color: yellow">
@@ -362,10 +374,13 @@
         </a-entity>
       </a-entity>
 
-      <a-entity class="object-selectable" id="design-blimp" position="-0.5 0.8 1.9">
+      <a-entity class="object-selectable" id="design-spinner" position="-0.5 0.879 1.9" rotation="0 -19 0">
         <a-entity spotlight
-          geometry="depth: 0.1; height: 0.1; width: 0.1"
-          material="color: purple">
+        obj-model="obj: #spinner-obj"
+        scale="0.075 0.075 0.075"
+        material="color: purple"
+        position="-0 0 0"
+        rotation="0 0 0">
           <a-animation
             begin="mouseenter"
             attribute="position"
@@ -404,7 +419,7 @@
         </a-entity>
       </a-entity>
 
-      <a-entity class="object-selectable" id="tech-vk" position="0.66 0.8 1.57">
+      <a-entity class="object-selectable" id="tech-vk" position="0.66 0.879 1.57">
         <a-entity spotlight
           geometry="depth: 0.1; height: 0.1; width: 0.1"
           material="color: black">
@@ -554,12 +569,13 @@
           radius-bottom="2.54"
           open-ended="true"
           opacity="0"
-          material="shader: volumetric-light; spotPosition: 0 2.52 -0.19; opacity: 0; attenuation: 4.54; anglePower: 6.2; lightColor: 0.83 0.91 1"
+          material="shader: volumetric-light; spotPosition: 0 2.52 -0.19; opacity: 0; attenuation: 2.87; anglePower: 12.91; lightColor: 0.64 0.91 1"
           rotation=""
           scale=""
-          visible=""
+          position="0 0 -0.188"
           geometry="">
         </a-cone>
+
         <a-light type="spot"
           color="#b0c9ce"
           angle="35"
@@ -581,7 +597,7 @@
       </a-plane>
       <a-sky color="black" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
 <!-- ==============  Temporary  ============== -->
-      <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient; visible: false"></a-entity>
+      <!-- <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient; visible: false"></a-entity> -->
     </a-scene>
 
 
