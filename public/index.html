@@ -36,6 +36,7 @@
         <a-asset-item id="district-obj" src="./assets/models/District_9_Assault_Rifle_lo_poly.obj"></a-asset-item>
         <a-asset-item id="spinner-obj" src="./assets/models/spinner_lo.obj"></a-asset-item>
         <a-asset-item id="fifth-element-obj" src="./assets/models/fifth_element_zf1_lo.obj"></a-asset-item>
+        <a-asset-item id="metropolis-obj" src="./assets/models/metropolis_maria.obj"></a-asset-item>
         <!-- <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png"> -->
 
         <!-- <a-asset-item id="akira-obj" src="/assets/models/akira-bike-1.obj"></a-asset-item>
@@ -61,7 +62,8 @@
         obj-model="obj: #set-obj"
         scale="0.01 0.01 0.01"
         rotation="-90 180 0"
-        position="0.161 0 1">
+        position="0.161 0 1"
+        shadow="cast: true">
       </a-entity>
 
       <!-- Camera -->
@@ -332,10 +334,13 @@
         </a-entity>
       </a-entity>
 
-      <a-entity class="object-selectable" id="metropolis" position="0.36 0.879 1.6">
+      <a-entity class="object-selectable" id="metropolis" position="0.360 0.83 1.6">
         <a-entity spotlight
-          geometry="depth: 0.1; height: 0.1; width: 0.1"
-          material="color: yellow">
+          obj-model="obj: #metropolis-obj"
+          material="color: white"
+          scale="0.003 0.003 0.003"
+          rotation="-90 0 0"
+          position="0 0 0">
           <a-animation
             begin="mouseenter"
             attribute="position"
@@ -347,8 +352,8 @@
           <a-animation
             begin="mouseenter"
             attribute="rotation"
-            from="0 0 0"
-            to="0 360 0"
+            from="-90 0 0"
+            to="-90 360 0"
             dur="2000"
             fill="both">
           </a-animation>
@@ -366,8 +371,8 @@
             delay="7000"
             begin="mouseleave"
             attribute="rotation"
-            from="0 360 0"
-            to="0 0 0"
+            from="-90 360 0"
+            to="-90 0 0"
             dur="2000"
             fill="both">
           </a-animation>
