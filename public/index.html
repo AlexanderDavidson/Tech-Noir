@@ -18,6 +18,9 @@
     <script src="https://rawgit.com/gmarty/aframe-ui-components/master/dist/aframe-ui-components.min.js"></script>
     <script src="https://rawgit.com/IdeaSpaceVR/aframe-ui-modal-component/master/dist/aframe-ui-modal-component.min.js"></script>
     <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-html-shader/master/dist/aframe-html-shader.min.js"></script>
+
+
     <!-- <script src="https://rawgit.com/scenevr/htmltexture-component/master/dist/aframe-htmltexture-component.min.js"></script> -->
 
     <!-- <script src="https://cdn.rawgit.com/tizzle/aframe-sprite-component/master/dist/aframe-sprite-component.min.js"></script> -->
@@ -25,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
 
     <script src="../client/index.js"></script>
+    <script src="./testVK.js"></script>
 
   </head>
   <body>
@@ -48,9 +52,29 @@
         <a-mixin id="popup-img" position="0 0 0" billboard></a-mixin>
         <a-mixin id="popup-text" position="0 0.7 0" text="value: Placeholder Text Placeholder Text Placeholder Text;" billboard></a-mixin>
         <a-mixin id="popup-video" position="0 0.2 -0.5" billboard></a-mixin>
-
-
       </a-assets>
+
+      <!-- Quiz Test -->
+      <a-entity id="quiz" class="lead quiz-1" position="1.07 1.23 4" >
+        <a-entity id="content" value=""></a-entity>
+        <a-text id="questionContainer" value=""></a-text>
+        <a-text id="choicesContainer" value=""></a-text>
+        <a-entity id="next-btn">
+          <a-box id="submitBtn" color="tomato" depth="0.1" height="0.1" width="0.1" rotation="0 -90 0"></a-box>
+          <a-text value="Next Question" rotation="0 -90 0"></a-text>
+        </a-entity>
+      </a-entity>
+
+
+  			<a-camera>
+  				<!-- this is a static point used as a rest position for the grabber -->
+  				<!-- this is also what we items to when we need to do grab it -->
+  				<a-entity id="camera-anchor" verlet-point="mass: 0; sync-position: true;" verlet-constraint="stiffness: 0.4;" position="-0.4 -0.5 -0.75"></a-entity>
+  			</a-camera>
+
+  			<!-- this is the tool used to interact with the ui -->
+  			<verlet-ui-pointer verlet-ui-default-pointer look-at='a-camera'></verlet-ui-pointer>
+  		</verlet-ui>
 
       <!-- Camera -->
       <a-entity position="0 0 3.8">
