@@ -58,3 +58,11 @@ AFRAME.registerComponent('spotlight', {
     })
   }
 })
+
+AFRAME.registerComponent('choose', {
+  init: function () {
+    this.el.addEventListener('mouseenter', function (event) {
+      console.log(event);
+    })
+  }
+})
