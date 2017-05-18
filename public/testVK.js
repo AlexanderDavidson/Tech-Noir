@@ -257,11 +257,10 @@ function askQuestion() {
     }
 
     // load the question
-    questionContainer.value = "Q" + (currentQuestion + 1) + ". " +
-    quiz[currentQuestion].question;
+    questionContainer.textContent = "Q" + (currentQuestion + 1) + ". " + quiz[currentQuestion].question
 
     // load the choices
-    choicesContainer.value = choicesHtml;
+    choicesContainer.innerHTML = choicesHtml;
 }
 
 function checkAnswer() {

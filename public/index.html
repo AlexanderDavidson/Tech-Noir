@@ -54,28 +54,6 @@
         <a-mixin id="popup-video" position="0 0.2 -0.5" billboard></a-mixin>
       </a-assets>
 
-      <!-- Quiz Test -->
-      <a-entity id="quiz" class="lead quiz-1" position="1.07 1.23 4" >
-        <a-entity id="content" value=""></a-entity>
-        <a-text id="questionContainer" value=""></a-text>
-        <a-text id="choicesContainer" value=""></a-text>
-        <a-entity id="next-btn">
-          <a-box id="submitBtn" color="tomato" depth="0.1" height="0.1" width="0.1" rotation="0 -90 0"></a-box>
-          <a-text value="Next Question" rotation="0 -90 0"></a-text>
-        </a-entity>
-      </a-entity>
-
-
-  			<a-camera>
-  				<!-- this is a static point used as a rest position for the grabber -->
-  				<!-- this is also what we items to when we need to do grab it -->
-  				<a-entity id="camera-anchor" verlet-point="mass: 0; sync-position: true;" verlet-constraint="stiffness: 0.4;" position="-0.4 -0.5 -0.75"></a-entity>
-  			</a-camera>
-
-  			<!-- this is the tool used to interact with the ui -->
-  			<verlet-ui-pointer verlet-ui-default-pointer look-at='a-camera'></verlet-ui-pointer>
-  		</verlet-ui>
-
       <!-- Camera -->
       <a-entity position="0 0 3.8">
         <a-entity id="camera"
@@ -603,8 +581,36 @@
       <a-sky color="black" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
 <!-- ==============  Temporary  ============== -->
       <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient"></a-entity>
-    </a-scene>
 
+
+      <!-- Quiz Test -->
+      <a-entity id="a-quiz"  position="1.07 1.23 4" > <!-- class="lead quiz-1" -->
+        <a-entity id="a-content" value=""></a-entity>
+        <a-text id="a-questionContainer" value=""></a-text>
+        <a-text id="a-choicesContainer" value=""></a-text>
+        <a-entity id="a-next-btn">
+          <a-box id="a-submitBtn" color="tomato" depth="0.1" height="0.1" width="0.1" rotation="0 -90 0"></a-box>
+          <a-text value="Next Question" rotation="0 -90 0"></a-text>
+        </a-entity>
+      </a-entity>
+
+    </a-scene>
+<!-- hiddden test -->
+    <div>
+      <div class="test">
+
+        <div id="quiz" class="lead quiz-1">
+          <div id="content"></div>
+          <div id="questionContainer"></div>
+          <div id="choicesContainer"></div>
+        </div>
+      </div>
+
+      <div id="content"></div>
+      <div id="next-btn">
+        <input type="button" id="submitBtn" value="Next Question" />
+      </div>
+    </div>
 
   </body>
 </html>
