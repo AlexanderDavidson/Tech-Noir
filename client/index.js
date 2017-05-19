@@ -60,40 +60,54 @@ AFRAME.registerComponent('spotlight', {
   }
 })
 
+// -------------------------------------------------------------------
 AFRAME.registerComponent('choose', {
-  var $this = this.el
-
   init: function () {
-    this.el.addEventListener('click', function () {
-      $chosen = document.querySelector('.chosen')
+    var $this = this.el
 
-      if ( $chosen ) { // if chosen look for other answers with class chosen and remove it
-        const $selectedAnswer = document.querySelector('.selectedAnswer')
-        $selectedAnswer.classlist.remove('selectedAnswer')
-        console.log()
+    this.el.addEventListener('click', function () {
+      $selected = document.querySelector('.selected') // $current === class="hilighted"
+
+      if ( $selected ) {
+        console.log('why did this work')
+        const $current = document.querySelector('.selected')
+        $current.removeAttribute('mixin')
+        $current.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
+        $current.classList.remove('selected') // look for mixin vk-choices-mat
       }
 
-      $this.classList.add('selectedAnswer')
-      $this.setAttribute('mixin', 'vk-choices-selected')
+      $this.classList.add('selected')
+      $this.setAttribute('mixin', 'vk-choices-geo vk-choices-selected')
     })
   }
 })
+// ----------------------------------------------------------------------
 
-AFRAME.registerComponent('choose', {
-  var $this = this.el
+// AFRAME.registerComponent('choose', {
+//
+//   init: function () {
+//     var $this =this.el
+//     this.el.addEventListener('click', function () {
+//       $chosen = document.querySelector('.chosen')
+//
+//       if ( $chosen ) { // if chosen look for other answers with class chosen and remove it
+//         console.log('hey there')
+//         const $selectedAnswer = document.querySelectorAll('.selectedAnswer')
+//         $selectedAnswer.removeAttribute('mixin')
+//         $selectedAnswer.classList.remove('selectedAnswer')
+//
+//       }
+//
+//       $this.classList.add('selectedAnswer')
+//       $this.setAttribute('mixin', 'vk-choices-geo vk-choices-selected')
+//     })
+//   }
+// })
 
-  init: function () {
-    this.el.addEventListener('click', function () {
-      $chosen = document.querySelector('.chosen')
-
-      if ( $chosen ) { // if chosen look for other answers with class chosen and remove it
-        const $selectedAnswer = document.querySelector('.selectedAnswer')
-        $selectedAnswer.classlist.remove('selectedAnswer')
-        console.log()
-      }
-
-      $this.classList.add('selectedAnswer')
-      $this.setAttribute('mixin', 'vk-choices-selected')
-    })
-  }
-})
+// AFRAME.registerComponent('choose', {
+//   init: function () {
+//     this.el.addEventListener('click', function (event) {
+//       console.log(event);
+//     })
+//   }
+// })

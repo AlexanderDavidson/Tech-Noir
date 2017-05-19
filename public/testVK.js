@@ -261,6 +261,7 @@ question.choices.forEach( function(choice, index) {
   const $choice = document.createElement('a-entity')
   // $choice.setAttribute('value', choice)
   $choice.setAttribute('id', 'answer' + index)
+  $choice.setAttribute('choose', '')
   $choice.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
 
   $choice.setAttribute('text', 'anchor: center; align: center; color: white; width: 5; wrapCount: 50; opacity: 1; value: ' + choice)
