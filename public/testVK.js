@@ -153,7 +153,11 @@ var quiz = {
     questions: [
       {
           "text": "It\'s your birthday. Someone gives you a calfskin wallet. How do you react?",
-          "choices": ["I would appreciate it.", "Thank you for the wallet", "I wouldnt accept it."],
+          "choices": [
+            "I would appreciate it.",
+            "Thank you for the wallet",
+            "I wouldnt accept it."
+          ],
           "answer": [0, 5, 10]
       }, {
           "text": "You\'ve got a little boy. He shows you his butterfly collection plus the killing jar. What do you do?",
@@ -240,21 +244,31 @@ var quiz = {
 const question = quiz.questions[quiz.currentQuestion]
 const $scene = document.querySelector('a-scene')
 
-const $text = document.createElement('a-text')
-$text.setAttribute('value', question.text)
-$text.setAttribute('text', 'color:red;width:5')
-$text.setAttribute('position', '-0.5 2.5 3')
-$scene.appendChild($text)
+const $quizContainer = document.querySelector('#quiz-container')
+// const $questionContainer = document.querySelector('#question-container')
+// const $choice1Container = document.querySelector('#choice-1-container')
+// const $choice2Container = document.querySelector('#choice-2-container')
+// const $choice3Container = document.querySelector('#choice-3-container')
+
+const $text = document.createElement('a-entity')
+$text.id = "questionContainer"
+$text.setAttribute('mixin', 'vk-questions')
+// $text.setAttribute('text', question.text)
+$text.setAttribute('text', 'color: white; width: auto; align: center; anchor: center; opacity: 1; wrapCount: 30; value: ' + question.text)
+$quizContainer.appendChild($text)
 
 question.choices.forEach( function(choice, index) {
-  const $choice = document.createElement('a-text')
-  $choice.setAttribute('value', choice)
-  $choice.setAttribute('id', index)
-  $choice.setAttribute('text', 'anchor: align; color: blue; width: 5; opacity: 1')
-  $choice.setAttribute('position', '-0.5 ' + (index + 0.4) + ' 1')
-  $choice.setAttribute('choose', '')
+  const $choice = document.createElement('a-entity')
+  // $choice.setAttribute('value', choice)
+  $choice.setAttribute('id', 'answer' + index)
+  $choice.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
 
-  $scene.appendChild($choice)
+  $choice.setAttribute('text', 'anchor: center; align: center; color: white; width: 5; wrapCount: 50; opacity: 1; value: ' + choice)
+  $choice.setAttribute('position', '0.17 ' + (-0.5 + index * 0.3) + ' 0')
+  $choice.setAttribute('choose', '')
+  $choice.setAttribute('vkValue', question.answer[index])
+
+  $quizContainer.appendChild($choice)
 })
 
 

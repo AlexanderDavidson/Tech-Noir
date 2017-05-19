@@ -29,6 +29,7 @@ AFRAME.registerComponent('spotlight', {
     var $popupImg = document.createElement('a-entity')
     var $popupText = document.createElement('a-entity')
     var $popupVid = document.createElement('a-entity')
+
     const $effects = document.createElement('a-entity')
     $effects.classList.add('effects')
 
@@ -45,12 +46,12 @@ AFRAME.registerComponent('spotlight', {
     $effects.appendChild($popupVid)
 
     this.el.addEventListener('mouseenter', function () {
-      $current = document.querySelector('.highlighted')
+      $current = document.querySelector('.highlighted') // $current === class="hilighted"
 
-      if ( $current ) {
-        const $currentEffects = document.querySelector('.effects')
-        const $effectsParent = $currentEffects.parentNode
-        $effectsParent.removeChild($currentEffects)
+      if ( $current ) { // if hilighted look for class effects and remove class effects from parent node
+        const $currentEffects = document.querySelector('.effects') //look for class effects
+        const $effectsParent = $currentEffects.parentNode // class: effects parent node
+        $effectsParent.removeChild($currentEffects) // remove all effects
       }
 
       $thisParent.classList.add('highlighted')
@@ -60,9 +61,39 @@ AFRAME.registerComponent('spotlight', {
 })
 
 AFRAME.registerComponent('choose', {
+  var $this = this.el
+
   init: function () {
-    this.el.addEventListener('mouseenter', function (event) {
-      console.log(event);
+    this.el.addEventListener('click', function () {
+      $chosen = document.querySelector('.chosen')
+
+      if ( $chosen ) { // if chosen look for other answers with class chosen and remove it
+        const $selectedAnswer = document.querySelector('.selectedAnswer')
+        $selectedAnswer.classlist.remove('selectedAnswer')
+        console.log()
+      }
+
+      $this.classList.add('selectedAnswer')
+      $this.setAttribute('mixin', 'vk-choices-selected')
+    })
+  }
+})
+
+AFRAME.registerComponent('choose', {
+  var $this = this.el
+
+  init: function () {
+    this.el.addEventListener('click', function () {
+      $chosen = document.querySelector('.chosen')
+
+      if ( $chosen ) { // if chosen look for other answers with class chosen and remove it
+        const $selectedAnswer = document.querySelector('.selectedAnswer')
+        $selectedAnswer.classlist.remove('selectedAnswer')
+        console.log()
+      }
+
+      $this.classList.add('selectedAnswer')
+      $this.setAttribute('mixin', 'vk-choices-selected')
     })
   }
 })
