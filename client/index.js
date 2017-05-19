@@ -50,7 +50,7 @@ AFRAME.registerComponent('choose', {
       $selected = document.querySelector('.selected')
 
       if ( $selected ) {
-        console.log('why did this work')
+        console.log('you selected an answer')
         const $current = document.querySelector('.selected')
         $current.removeAttribute('mixin')
         $current.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
@@ -59,6 +59,19 @@ AFRAME.registerComponent('choose', {
 
       $this.classList.add('selected')
       $this.setAttribute('mixin', 'vk-choices-geo vk-choices-selected')
+    })
+  }
+})
+
+// VK Quiz Next Question/Submit Button
+
+AFRAME.registerComponent('next', {
+
+  init: function () {
+    var $this = this.el
+
+    this.el.addEventListener('click', function () {
+      console.log('you clicked next')
     })
   }
 })
