@@ -75,3 +75,7 @@ AFRAME.registerComponent('next', {
     })
   }
 })
+
+// create nev value in test array
+// update current question and replicant probablility value on clicking next
+// flush new value to DOM
