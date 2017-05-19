@@ -245,11 +245,6 @@ const question = quiz.questions[quiz.currentQuestion]
 const $scene = document.querySelector('a-scene')
 
 const $quizContainer = document.querySelector('#quiz-container')
-// const $questionContainer = document.querySelector('#question-container')
-// const $choice1Container = document.querySelector('#choice-1-container')
-// const $choice2Container = document.querySelector('#choice-2-container')
-// const $choice3Container = document.querySelector('#choice-3-container')
-
 const $text = document.createElement('a-entity')
 $text.id = "questionContainer"
 $text.setAttribute('mixin', 'vk-questions')
