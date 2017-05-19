@@ -2,8 +2,6 @@
 <html>
   <head>
     <title>Tech Noir</title>
-    <!-- <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon"> -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,27 +17,14 @@
     <script src="https://rawgit.com/IdeaSpaceVR/aframe-ui-modal-component/master/dist/aframe-ui-modal-component.min.js"></script>
     <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-html-shader/master/dist/aframe-html-shader.min.js"></script>
-
-
-    <!-- <script src="https://rawgit.com/scenevr/htmltexture-component/master/dist/aframe-htmltexture-component.min.js"></script> -->
-
-    <!-- <script src="https://cdn.rawgit.com/tizzle/aframe-sprite-component/master/dist/aframe-sprite-component.min.js"></script> -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
 
     <script src="../client/index.js"></script>
-
-
   </head>
   <body>
 
     <a-scene fog="type: linear; color: black; density: 0.01" shadow="type: pcfsoft" light="shadowMapType: basic" stats> <!-- fog="color: black; density: 0.8; far: 10; near: 4" or fog="color: black; density: 0.12; far: 10; near: 10; type: exponential" -->
       <a-assets>
-        <!-- <img id="person" src="http://www.clipartbest.com/cliparts/Kin/X6g/KinX6gp5T.png"> -->
-
-        <!-- <a-asset-item id="akira-obj" src="/assets/models/akira-bike-1.obj"></a-asset-item>
-        <a-asset-item id="akira-mtl" src="/assets/models/akira-bike-1.mtl"></a-asset-item> -->
-
         <a-mixin id="hover-light"
           light="type: spot; color: #FFF; intensity: 0.6; angle: 12; penumbra: 1"
           position="0 1 0"
@@ -47,11 +32,27 @@
           visible="true">
         </a-mixin>
 
+        <a-mixin id="popup-title"
+          position="0 0.3 0"
+          text="value: Placeholder Title;"
+          billboard>
+        </a-mixin>
 
-        <a-mixin id="popup-title" position="0 0.3 0" text="value: Placeholder Title;" billboard></a-mixin>
-        <a-mixin id="popup-img" position="0 0 0" billboard></a-mixin>
-        <a-mixin id="popup-text" position="0 0.7 0" text="value: Placeholder Text Placeholder Text Placeholder Text;" billboard></a-mixin>
-        <a-mixin id="popup-video" position="0 0.2 -0.5" billboard></a-mixin>
+        <a-mixin id="popup-img"
+          position="0 0 0"
+          billboard>
+        </a-mixin>
+
+        <a-mixin id="popup-text"
+          position="0 0.7 0"
+          text="value: Placeholder Text Placeholder Text Placeholder Text;"
+          billboard>
+        </a-mixin>
+
+        <a-mixin id="popup-video"
+          position="0 0.2 -0.5"
+          billboard>
+        </a-mixin>
 
         <a-mixin id="vk-questions"
           position="0 0.8"
@@ -68,9 +69,7 @@
         <a-mixin id="vk-choices-selected"
           material="side: double; color: #FE5F55; opacity: 0.5">
         </a-mixin>
-        <!-- <a-mixin id=""></a-mixin> -->
       </a-assets>
-
 
       <a-entity id="quiz-container" position="1.7 2.7 -1.5">
         <a-entity id="next-question"
@@ -112,59 +111,8 @@
               dur="1500">
             </a-animation> -->
           </a-entity>
-
-          <!-- <a-entity
-            geometry="primitive: circle; radius: 0.03"
-            position="0 0 -1"
-            material="color: gray; opacity: 0.5">
-          </a-entity> -->
         </a-entity>
       </a-entity>
-
-      <!-- <a-entity>
-        <a-cone height="5"
-              radius-top="0.5"
-              radius-bottom="1.5"
-              open-ended="true"
-              position="0 0 0"
-              opacity="0"
-              material="shader: volumetric-light; spotPosition: 0 0 0; opacity: 0; attenuation: 3.49; anglePower: 3.36;">
-        </a-cone>
-        <a-light type="spot" color="#fff" angle="35"
-                 rotation="-90 0 0"
-                 position="0 0 0"
-                 target="#box"
-                 intensity="0.54"
-                 penumbra="0.57"
-                 shadowCameraFar="499.87">
-        </a-light>
-      </a-entity> -->
-
-<!-- test volumetric lighting -->
-
-      <!-- <a-light type="spot" color="#fff" angle="35" target="#box" intensity="0.54" penumbra="0.57" shadowcamerafar="499.87" light="angle:69.75;color:#fff;intensity:0.54;penumbra:0.57;type:spot;target:null;castShadow:true;shadowBias:0.05;shadowCameraFar:501.12;shadowCameraFov:91.59;shadowCameraNear:1.38;shadowCameraTop:4.87;shadowCameraVisible:true">
-      </a-light>
-
-      <a-cone height="5" radius-top="0.5" radius-bottom="1.5" open-ended="true" opacity="0" material="opacity:0;shader:volumetric-light;attenuation:100000;anglePower:14.81;spotPosition:{&quot;x&quot;:0,&quot;y&quot;:0,&quot;z&quot;:-45};lightColor:{&quot;x&quot;:0.5,&quot;y&quot;:1,&quot;z&quot;:1}" geometry="mergeTo:null;primitive:cone;height:2.68;openEnded:true;radiusBottom:4.11;radiusTop:2.88;segmentsHeight:17;segmentsRadial:19;radius:2.47">
-      </a-cone>
-
-      <a-entity position="">
-        <a-cone height="5" radius-top="0.5" radius-bottom="1.5" open-ended="true" opacity="0" material="shader: volumetric-light; spotPosition: 0 0 0; opacity: 0; attenuation: 3.49; anglePower: 3.36;" rotation="" scale="" visible="" geometry="">
-        </a-cone>
-        <a-light type="spot" color="#fff" angle="35" target="#box" intensity="0.54" penumbra="0.57" shadowcamerafar="499.87" scale="" visible="" light="">
-        </a-light>
-      </a-entity> -->
-
-<!-- shader test -->
-
-      <!-- <a-sphere material-displacement
-                scale="1 1 1"
-                radius="0.2"
-                position="0 3.5 -12"
-                segments-height="128"
-                segments-width="128">
-        <a-animation attribute="scale" direction="alternate-reverse" dur="20000" from="1 1 1" to="4 4 4" repeat="indefinite"></a-animation>
-      </a-sphere> -->
 
 <!-- OBJECTS -->
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
@@ -478,35 +426,8 @@
 <!-- ==============  Temporary  ============== -->
       <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient"></a-entity>
 
-
-      <!-- Quiz Test -->
-      <!-- <a-entity id="a-quiz"  position="1.07 1.23 4" >-->  <!-- class="lead quiz-1" -->
-        <!-- <a-entity id="a-content" value=""></a-entity>
-        <a-text id="a-questionContainer" value=""></a-text>
-        <a-text id="a-choicesContainer" value=""></a-text>
-        <a-entity id="a-next-btn">
-          <a-box id="a-submitBtn" color="tomato" depth="0.1" height="0.1" width="0.1" rotation="0 -90 0"></a-box>
-          <a-text value="Next Question" rotation="0 -90 0"></a-text>
-        </a-entity>
-      </a-entity> -->
-
     </a-scene>
-<!-- hiddden test -->
-    <!-- <div>
-      <div class="test">
 
-        <div id="quiz" class="lead quiz-1">
-          <div id="content"></div>
-          <div id="questionContainer"></div>
-          <div id="choicesContainer"></div>
-        </div>
-      </div>
-
-      <div id="content"></div>
-      <div id="next-btn">
-        <input type="button" id="submitBtn" value="Next Question" />
-      </div>
-    </div> -->
     <script src="./testVK.js"></script>
   </body>
 </html>
