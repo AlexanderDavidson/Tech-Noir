@@ -1,5 +1,6 @@
 var quiz = {
     currentQuestion: 0,
+    currentReplicantVal: 0,
     questions: [
       {
           "text": "It\'s your birthday. Someone gives you a calfskin wallet. How do you react?",
