@@ -1,22 +1,3 @@
-// Scene Selector
-var scene = d3.select("a-scene")
-
-//  Object Selectors
-var $akira = d3.select("akira")
-var $akiraLight = d3.select("akira-light")
-
-var $district9 = d3.select("district-9")
-
-var $minorityReport = d3.select("minority-report")
-
-var $twelveMonkeys = d3.select("twelve-monkeys")
-
-var $metropolis = d3.select("metropolis")
-
-var $designBlimp = d3.select("design-blimp")
-
-var $techVK = d3.select("tech-vk")
-
 // Object Highlight animation
 AFRAME.registerComponent('spotlight', {
 
@@ -29,6 +10,7 @@ AFRAME.registerComponent('spotlight', {
     var $popupImg = document.createElement('a-entity')
     var $popupText = document.createElement('a-entity')
     var $popupVid = document.createElement('a-entity')
+
     const $effects = document.createElement('a-entity')
     $effects.classList.add('effects')
 
@@ -45,16 +27,38 @@ AFRAME.registerComponent('spotlight', {
     $effects.appendChild($popupVid)
 
     this.el.addEventListener('mouseenter', function () {
-      $current = document.querySelector('.highlighted')
+      $current = document.querySelector('.highlighted') // $current === class="hilighted"
 
-      if ( $current ) {
-        const $currentEffects = document.querySelector('.effects')
-        const $effectsParent = $currentEffects.parentNode
-        $effectsParent.removeChild($currentEffects)
+      if ( $current ) { // if hilighted look for class effects and remove class effects from parent node
+        const $currentEffects = document.querySelector('.effects') //look for class effects
+        const $effectsParent = $currentEffects.parentNode // class: effects parent node
+        $effectsParent.removeChild($currentEffects) // remove all effects
       }
 
       $thisParent.classList.add('highlighted')
       $thisParent.appendChild($effects)
+    })
+  }
+})
+
+// VK Quiz Answer Selector
+AFRAME.registerComponent('choose', {
+  init: function () {
+    var $this = this.el
+
+    this.el.addEventListener('click', function () {
+      $selected = document.querySelector('.selected')
+
+      if ( $selected ) {
+        console.log('why did this work')
+        const $current = document.querySelector('.selected')
+        $current.removeAttribute('mixin')
+        $current.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
+        $current.classList.remove('selected')
+      }
+
+      $this.classList.add('selected')
+      $this.setAttribute('mixin', 'vk-choices-geo vk-choices-selected')
     })
   }
 })
