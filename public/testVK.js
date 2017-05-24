@@ -95,7 +95,7 @@ var replicantVal = quiz.currentReplicantVal
 
 // Question
 function question() {
-  const question = quiz.questions[quiz.currentQuestion]
+  const question = quiz.questions[quiz.currentQuestion]  // Current Quiz Question
   const $scene = document.querySelector('a-scene')
 
   const $quizContainer = document.querySelector('#quiz-container')

@@ -84,10 +84,12 @@ AFRAME.registerComponent('next', {
       $next = document.querySelector('#next-question')
       $selected = document.querySelector('.selected')
 
+      $quizContainer = document.querySelector('#quiz-container')
+
       if ( $next ) {
         const $current = document.querySelector('.selected')
-        const vkValue = $current.getAttribute('vkValue')
-        var $vkValue = vkValue.valueOf()
+        const $vkValue = $current.getAttribute('vkValue')
+        // var $vkValue = vkValue.valueOf()
 
         replicantVal += $vkValue
         console.log(quiz.currentQuestion)
@@ -95,6 +97,7 @@ AFRAME.registerComponent('next', {
         console.log('New VK value is ' + quiz.currentReplicantVal)
         quiz.currentQuestion += 1
 
+        $quizContainer.innerHTML = ''
         // function updateVKval () {
         //   var
         // }
