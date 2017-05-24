@@ -62,3 +62,33 @@ AFRAME.registerComponent('choose', {
     })
   }
 })
+
+// VK Quiz Next Button
+AFRAME.registerComponent('next', {
+  init: function () {
+    var $this = this.el
+
+    this.el.addEventListener('click', function () {
+      $next = document.querySelector('#next-question')
+      $selected = document.querySelector('.selected')
+
+      if ( $next ) {
+        const $current = document.querySelector('.selected')
+        const vkValue = $current.getAttribute('vkValue')
+        var $vkValue = vkValue.valueOf()
+
+        replicantVal += $vkValue
+        console.log(quiz.currentQuestion)
+        console.log('The VK value of selected question is ' + $vkValue)
+        console.log('New VK value is ' + quiz.currentReplicantVal)
+        quiz.currentQuestion += 1
+
+        // function updateVKval () {
+        //   var
+        // }
+      }
+
+      question()
+    })
+  }
+})
