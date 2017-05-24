@@ -97,23 +97,22 @@ var replicantVal = quiz.currentReplicantVal
 function question() {
   const question = quiz.questions[quiz.currentQuestion]  // Current Quiz Question
   const $scene = document.querySelector('a-scene')
-
   const $quizContainer = document.querySelector('#quiz-container')
   const $text = document.createElement('a-entity')
+
   $text.id = "questionContainer"
   $text.setAttribute('mixin', 'vk-questions')
-  // $text.setAttribute('text', question.text)
   $text.setAttribute('text', 'color: white; width: auto; align: center; anchor: center; opacity: 1; wrapCount: 30; value: ' + question.text)
+
   $quizContainer.appendChild($text)
 
   // Answer Choices
   question.choices.forEach( function(choice, index) {
     const $choice = document.createElement('a-entity')
-    // $choice.setAttribute('value', choice)
+
     $choice.setAttribute('id', 'answer' + index)
     $choice.setAttribute('choose', '')
     $choice.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
-
     $choice.setAttribute('text', 'anchor: center; align: center; color: white; width: 5; wrapCount: 50; opacity: 1; value: ' + choice)
     $choice.setAttribute('position', '0.17 ' + (-0.5 + index * 0.3) + ' 0')
     $choice.setAttribute('choose', '')
