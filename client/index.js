@@ -41,6 +41,18 @@ AFRAME.registerComponent('spotlight', {
   }
 })
 
+// VK Quiz Initializer
+AFRAME.registerComponent('take-quiz', {
+  init: function () {
+    var $this = this.el
+
+    this.el.addEventListener('click', function () {
+      $this.setAttribute('visible', 'false' )
+      question()
+    })
+  }
+})
+
 // VK Quiz Answer Selector
 AFRAME.registerComponent('choose', {
   init: function () {

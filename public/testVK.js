@@ -123,7 +123,6 @@ function question() {
   })
 }
 
-question()
 
 
 
