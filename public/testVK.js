@@ -123,14 +123,6 @@ function question() {
   })
 }
 
-
-
-
-
-
-
-
-
 // put html objects to anchor text to
 // be able to select answer
 // log value of answer

@@ -62,8 +62,10 @@ AFRAME.registerComponent('choose', {
       $selected = document.querySelector('.selected')
 
       if ( $selected ) {
-        console.log('why did this work')
         const $current = document.querySelector('.selected')
+        const $vkValue = $current.getAttribute('vkValue')
+        console.log('You selected '+ $this.id + ' with a VK value of '+ $vkValue)
+
         $current.removeAttribute('mixin')
         $current.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
         $current.classList.remove('selected')
@@ -88,19 +90,17 @@ AFRAME.registerComponent('next', {
 
       if ( $next ) {
         const $current = document.querySelector('.selected')
-        const $vkValue = $current.getAttribute('vkValue')
-        // var $vkValue = vkValue.valueOf()
+        const vkValue = $current.getAttribute('vkValue')
+        var $vkValue = parseFloat(vkValue)
 
-        replicantVal += $vkValue
-        console.log(quiz.currentQuestion)
-        console.log('The VK value of selected question is ' + $vkValue)
-        console.log('New VK value is ' + quiz.currentReplicantVal)
-        quiz.currentQuestion += 1
+        quiz.currentReplicantVal = (quiz.currentReplicantVal + $vkValue)
+
+        console.log('The last question was Question #' + quiz.currentQuestion)
+        console.log('The VK value of selected question was ' + $vkValue)
+        console.log('The new VK value is ' + quiz.currentReplicantVal)
+        quiz.currentQuestion ++
 
         $quizContainer.innerHTML = ''
-        // function updateVKval () {
-        //   var
-        // }
       }
 
       question()
