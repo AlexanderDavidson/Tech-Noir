@@ -41,6 +41,18 @@ AFRAME.registerComponent('spotlight', {
   }
 })
 
+// VK Quiz Initializer
+AFRAME.registerComponent('take-quiz', {
+  init: function () {
+    var $this = this.el
+
+    this.el.addEventListener('click', function () {
+      $this.setAttribute('visible', 'false' )
+      question()
+    })
+  }
+})
+
 // VK Quiz Answer Selector
 AFRAME.registerComponent('choose', {
   init: function () {
@@ -50,8 +62,10 @@ AFRAME.registerComponent('choose', {
       $selected = document.querySelector('.selected')
 
       if ( $selected ) {
-        console.log('why did this work')
         const $current = document.querySelector('.selected')
+        const $vkValue = $current.getAttribute('vkValue')
+        console.log('You selected '+ $this.id + ' with a VK value of '+ $vkValue)
+
         $current.removeAttribute('mixin')
         $current.setAttribute('mixin', 'vk-choices-geo vk-choices-mat')
         $current.classList.remove('selected')
@@ -59,6 +73,37 @@ AFRAME.registerComponent('choose', {
 
       $this.classList.add('selected')
       $this.setAttribute('mixin', 'vk-choices-geo vk-choices-selected')
+    })
+  }
+})
+
+// VK Quiz Next Button
+AFRAME.registerComponent('next', {
+  init: function () {
+    var $this = this.el
+
+    this.el.addEventListener('click', function () {
+      $next = document.querySelector('#next-question')
+      $selected = document.querySelector('.selected')
+
+      $quizContainer = document.querySelector('#quiz-container')
+
+      if ( $next ) {
+        const $current = document.querySelector('.selected')
+        const vkValue = $current.getAttribute('vkValue')
+        var $vkValue = parseFloat(vkValue)
+
+        quiz.currentReplicantVal = (quiz.currentReplicantVal + $vkValue)
+
+        console.log('The last question was Question #' + quiz.currentQuestion)
+        console.log('The VK value of selected question was ' + $vkValue)
+        console.log('The new VK value is ' + quiz.currentReplicantVal)
+        quiz.currentQuestion ++
+
+        $quizContainer.innerHTML = ''
+      }
+
+      question()
     })
   }
 })

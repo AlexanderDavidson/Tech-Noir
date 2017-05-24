@@ -69,15 +69,28 @@
         <a-mixin id="vk-choices-selected"
           material="side: double; color: #FE5F55; opacity: 0.5">
         </a-mixin>
+
       </a-assets>
 
+      <!-- Quiz -->
+      <a-entity id="take-quiz=btn"
+        position="1.7 2.7 -1.5"
+        take-quiz=""
+        visible="true"
+        geometry="primitive: plane; width: auto; height: auto"
+        material="color: blue"
+        text="value: Take the Voight-Kampff Test; color: white; width: auto; align: center; anchor: center; opacity: 1; wrapCount: 30">
+      </a-entity>
+
       <a-entity id="quiz-container" position="1.7 2.7 -1.5">
-        <a-entity id="next-question"
-          position="1.1 -0.76 0"
-          rotation="0 0 -90"
-          geometry="primitive: cone; height: 0.25; radiusBottom: 0.1; radiusTop: 0"
-          material="color: white">
-        </a-entity>
+      </a-entity>
+
+      <a-entity id="next-question"
+        next=""
+        position="2.8 1.94 -1.5"
+        rotation="0 0 -90"
+        geometry="primitive: cone; height: 0.25; radiusBottom: 0.1; radiusTop: 0"
+        material="color: white">
       </a-entity>
 
       <!-- Camera -->
