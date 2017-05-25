@@ -77,18 +77,25 @@ AFRAME.registerComponent('choose', {
   }
 })
 
-// VK Quiz Next Button
+// VK Quiz Next Button & Results
 AFRAME.registerComponent('next', {
   init: function () {
     var $this = this.el
 
     this.el.addEventListener('click', function () {
-      $next = document.querySelector('#next-question')
-      $selected = document.querySelector('.selected')
+      const $next = document.querySelector('#next-question')
+      const $selected = document.querySelector('.selected')
+      const $quizContainer = document.querySelector('#quiz-container')
 
-      $quizContainer = document.querySelector('#quiz-container')
+      const $quizResult = document.querySelector('#quiz-result')
+      var $questionNum = quiz.currentQuestion
 
-      if ( $next ) {
+      if ( $questionNum == 9 ) {
+        $quizContainer.setAttribute('visible', 'false')
+        $quizResult.setAttribute('visible', 'true')
+      }
+
+      else if ( $next ) { // change to else if
         const $current = document.querySelector('.selected')
         const vkValue = $current.getAttribute('vkValue')
         var $vkValue = parseFloat(vkValue)
@@ -107,3 +114,15 @@ AFRAME.registerComponent('next', {
     })
   }
 })
+
+// Quiz Results
+
+// listen for last question
+  // use add class="completed" after last question
+  // use event listener/if statement to check for class="completed"
+    // if currentQuestion === 9
+// after last question
+  // set quiz entity visible="false"
+  // set result entity visible="true"
+  // dynamically display score
+    // create function to determine percentage and likelyhood of being replicant

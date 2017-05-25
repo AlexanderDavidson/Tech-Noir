@@ -121,9 +121,3 @@ function question() {
     $quizContainer.appendChild($choice)
   })
 }
-
-// put html objects to anchor text to
-// be able to select answer
-// log value of answer
-// have some way to submit once selected
-// add +1 to current question to move to next question
