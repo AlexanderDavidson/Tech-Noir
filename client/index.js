@@ -98,7 +98,7 @@ AFRAME.registerComponent('next', {
       const $resultText = document.querySelector('result-text')
       var $questionNum = quiz.currentQuestion
 
-      if ( $questionNum == 10 ) {
+      if ( $questionNum == 9 ) {
         var $replicant = quiz.currentReplicantVal
         $quizContainer.setAttribute('visible', 'false')
 
