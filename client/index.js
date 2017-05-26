@@ -41,6 +41,13 @@ AFRAME.registerComponent('spotlight', {
   }
 })
 
+// Replicant Percentile
+function replicantEval($replicant) {
+  const $resultText = document.querySelector('#result-text')
+
+  $resultText.setAttribute('text', 'color: white; width: auto; align: center; anchor: center; opacity: 1; wrapCount: 30; value: You have a ' + $replicant + '% chance of being a Replicant')
+}
+
 // VK Quiz Initializer
 AFRAME.registerComponent('take-quiz', {
   init: function () {
@@ -88,10 +95,14 @@ AFRAME.registerComponent('next', {
       const $quizContainer = document.querySelector('#quiz-container')
 
       const $quizResult = document.querySelector('#quiz-result')
+      const $resultText = document.querySelector('result-text')
       var $questionNum = quiz.currentQuestion
 
       if ( $questionNum == 9 ) {
+        var $replicant = quiz.currentReplicantVal
         $quizContainer.setAttribute('visible', 'false')
+
+        replicantEval($replicant)
         $quizResult.setAttribute('visible', 'true')
       }
 

@@ -121,3 +121,10 @@ function question() {
     $quizContainer.appendChild($choice)
   })
 }
+
+// // Replicant Percentile
+// function replicantEval($replicant) {
+//   const $resultText = document.querySelector('result-text')
+// 
+//   $resultText.setAttribute('text', 'color: white; width: auto; align: center; anchor: center; opacity: 1; wrapCount: 30; value: You have a ' + $replicant + '% chance of being a Replicant')
+// }
