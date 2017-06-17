@@ -101,7 +101,7 @@
 
       <!-- Quiz -->
       <a-entity id="take-quiz=btn"
-        position="1.7 2.7 -1.5"
+        position="0 2.7 0.5"
         take-quiz=""
         visible="true"
         geometry="primitive: plane; width: 4; height: 1"
@@ -109,19 +109,19 @@
         text="value: Take the Voight-Kampff Test; color: white; width: auto; align: center; anchor: center; opacity: 1; wrapCount: 30">
       </a-entity>
 
-      <a-entity id="quiz-container" position="1.7 2.7 -1.5">
+      <a-entity id="quiz-container" position="0 2.7 -0.5">
       </a-entity>
 
       <a-entity id="next-question"
         next=""
-        position="2.8 1.94 -1.5"
+        position="2.8 1.94 0.5"
         rotation="0 0 -90"
         geometry="primitive: cone; height: 0.25; radiusBottom: 0.1; radiusTop: 0"
         material="color: white">
       </a-entity>
 
       <a-entity id="quiz-result"
-        position="1.7 2.7 -1.5"
+        position="1.7 2.7 0.5"
         quiz-result=""
         visible="false"> <!-- Change to true on completion -->
         <a-entity
@@ -177,7 +177,7 @@
       <!-- <a-entity obj-model="obj: #akira-obj; mtl: #akira-mtl"></a-entity> -->
       <!-- <a-entity geometry="primitive: box" scale="0.5 2 0.5" rotation="0 22d 0" position="0 2 -4" draw="width: 128; height: 512;" htmltexture="asset: #popup"></a-entity> -->
 
-      <a-entity class="object-selectable" id="akira" position="-0.668 0.879 1" rotation="0 -65 0">
+      <!-- <a-entity class="object-selectable" id="akira" position="-0.668 0.879 1" rotation="0 -65 0">
         <a-entity id="akira-object" spotlight
           obj-model="obj: #akira-obj"
           material="color: white"
@@ -485,7 +485,7 @@
             fill="both">
           </a-animation>
         </a-entity>
-      </a-entity>
+      </a-entity> -->
 
 
 <!-- Person Reference -->
@@ -500,7 +500,6 @@
         shadow="cast: false">
       </a-plane>
 
-<<<<<<< HEAD
 <!--   ceiling      -->
       <a-plane id="ceiling"
         height="30"
@@ -631,7 +630,6 @@
       <a-sky color="black" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
 <!-- ==============  Temporary  ============== -->
       <a-entity id="temp-light-amb" light="color: #9ebbc1; groundColor: #819296; intensity: 1; type: ambient"></a-entity>
->>>>>>> refs/remotes/origin/master
 
     </a-scene>
 
